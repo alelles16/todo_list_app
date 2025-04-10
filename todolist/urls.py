@@ -3,8 +3,8 @@ from rest_framework.routers import DefaultRouter
 from todolist import views
 
 router = DefaultRouter()
-router.register(r'tasks', views.TaskViewSet)
+router.register(r"tasks", views.TaskViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]

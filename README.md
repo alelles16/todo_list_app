@@ -52,7 +52,7 @@ With test coverage:
 pytest --cov=core
 ```
 
-## 🧪 Flake8 and Black
+## 🧼 Flake8 and Black
 
 To run flake8 and black formatter:
 
@@ -67,6 +67,8 @@ black .
 ---
 
 ## 🐳 Running
+
+Replace `.env_example` with your own `.env` or use the same variables.
 
 Build and start the containers:
 

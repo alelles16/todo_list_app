@@ -14,9 +14,9 @@ services:
         python manage.py runserver 0.0.0.0:8000'
     environment:
       - DB_HOST=db
-      - DB_NAME=postgres_db
-      - DB_USER=postgres_user
-      - DB_PASSWORD=postgres_password
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
       - DEBUG=1
     depends_on:
         - db
@@ -26,9 +26,9 @@ services:
     volumes:
       - dev-db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres_db
-      - POSTGRES_USER=postgres_user
-      - POSTGRES_PASSWORD=postgres_password
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - '5432:5432'
 

@@ -25,19 +25,20 @@ def test_list_tasks(api_client, sample_task):
 
 @pytest.mark.django_db
 def test_list_multiple_tasks_ordered(api_client):
-    tasks = [
-        Task.objects.create(title="Third Task", description="Yet another test task"),
-        Task.objects.create(title="Another Task", description="Another test task"),
-        Task.objects.create(title="Test Task", description="This is a test task"),
-    ]
+    Task.objects.create(title="First", description="A")
+    Task.objects.create(title="Second", description="B")
+    Task.objects.create(title="Third", description="C")
+
     url = reverse("task-list")
     response = api_client.get(url)
     assert response.status_code == status.HTTP_200_OK
-    assert len(response.data) == len(tasks)
+    assert len(response.data) == 3
 
     returned_titles = [task["title"] for task in response.data]
-    expected_titles = [task.title for task in Task.objects.order_by("-id")]
-    assert returned_titles == expected_titles
+    expected_titles = list(
+        Task.objects.order_by("-id").values_list("title", flat=True)
+    )
+    assert returned_titles == list(expected_titles)
 
 
 @pytest.mark.django_db

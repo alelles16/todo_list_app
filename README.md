@@ -83,6 +83,21 @@ The app will be available at:
 
 ---
 
+## 🔐 Django Admin & Superuser
+
+To create a Django superuser inside the Docker container, run:
+
+```bash
+docker-compose run --rm app sh -c "python3 manage.py createsuperuser"
+```
+
+Then follow the prompts to enter username, email, and password.
+
+Once created, you can access the Django admin interface at:  
+🔑 [`http://localhost:8000/admin/`](http://localhost:8000/admin/)
+
+---
+
 ## 📬 Available Endpoints
 
 ### 🔹 REST API (DRF)

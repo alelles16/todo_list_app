@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "todolist",
     # Third-party apps
     "rest_framework",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -119,4 +120,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STRAWBERRY_DJANGO = {
     "FIELD_DESCRIPTION_FROM_HELP_TEXT": True,
     "TYPE_DESCRIPTION_FROM_MODEL_DOCSTRING": True,
+}
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Todo List API",
+    "DESCRIPTION": "REST API for managing tasks in Todo List project",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
 }

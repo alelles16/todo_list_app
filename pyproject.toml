@@ -12,6 +12,7 @@ dependencies = [
     "django-rest-framework (>=0.1.0,<0.2.0)",
     "psycopg2 (>=2.9.10,<3.0.0)",
     "strawberry-graphql-django (>=0.58.0,<0.59.0)",
+    "drf-spectacular (>=0.28.0,<0.29.0)",
 ]
 
 [build-system]

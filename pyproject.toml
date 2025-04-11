@@ -6,11 +6,12 @@ authors = [
     {name = "alelles16@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<4.0"
 dependencies = [
     "django (>=5.2,<6.0)",
     "django-rest-framework (>=0.1.0,<0.2.0)",
     "psycopg2 (>=2.9.10,<3.0.0)",
+    "strawberry-graphql-django (>=0.58.0,<0.59.0)",
 ]
 
 [build-system]
